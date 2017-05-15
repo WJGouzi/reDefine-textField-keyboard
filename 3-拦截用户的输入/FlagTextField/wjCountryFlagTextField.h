@@ -17,5 +17,6 @@
  */
 - (void)initWithText;
 
+- (void)initWithContent;
 
 @end

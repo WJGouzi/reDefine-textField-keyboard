@@ -19,4 +19,10 @@
 // 省市
 - (void)initWithProvinceAndCity;
 
+
+// 通用的初始化方法
+- (void)initWithContent;
+
+
+
 @end

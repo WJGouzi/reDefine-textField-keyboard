@@ -42,7 +42,7 @@
     [self pickerView:self.pickView didSelectRow:0 inComponent:0];
 }
 
-- (void)initWithText {
+- (void)initWithContent {
     [self initWithProvinceAndCity];
 }
 

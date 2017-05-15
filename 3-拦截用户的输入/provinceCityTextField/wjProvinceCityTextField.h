@@ -13,6 +13,6 @@
 
 - (void)initWithProvinceAndCity;
 
-- (void)initWithText;
+- (void)initWithContent;
 
 @end

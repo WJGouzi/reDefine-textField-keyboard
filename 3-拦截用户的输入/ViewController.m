@@ -38,17 +38,17 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     // 使用分类，对方法进行重写
     // 让当前的文本框选中第一个
-    if (textField == self.wjCountryTextField) {
-        [textField initWithText];
-    } else if (textField == self.wjBirthdayTextField) {
-        [textField initWithBirthday];
-    } else {
-        [textField initWithProvinceAndCity];
-    }
+//    if (textField == self.wjCountryTextField) {
+//        [textField initWithText];
+//    } else if (textField == self.wjBirthdayTextField) {
+//        [textField initWithBirthday];
+//    } else {
+//        [textField initWithProvinceAndCity];
+//    }
     
     // 或者每个每个文本框都使用同一个初始化方法进行调用
     // 就可以不用进行判断
-//    [textField initWithText];
+    [textField initWithContent];
     
     
     NSLog(@"%s", __func__);

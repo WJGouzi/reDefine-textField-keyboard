@@ -32,7 +32,7 @@
     [self dateChange:self.pickView];
 }
 
-- (void)initWithText {
+- (void)initWithContent {
     [self initWithBirthday];
 }
 

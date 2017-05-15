@@ -14,7 +14,7 @@
 - (void)initWithBirthday;
 
 
-- (void)initWithText;
+- (void)initWithContent;
 
 
 @end
