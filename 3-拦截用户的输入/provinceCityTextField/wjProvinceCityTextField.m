@@ -18,6 +18,9 @@
 /* 选择省份的下标*/
 @property (nonatomic, assign) NSInteger provinceIndex;
 
+/* 市的下标*/
+@property (nonatomic, assign) NSInteger cityIndex;
+
 /** pickView*/
 @property (nonatomic, strong) UIPickerView *pickView;
 
@@ -39,12 +42,14 @@
 }
 
 - (void)initWithProvinceAndCity {
-    [self pickerView:self.pickView didSelectRow:0 inComponent:0];
+    [self pickerView:self.pickView didSelectRow:self.provinceIndex inComponent:0];
+    [self pickerView:self.pickView didSelectRow:self.cityIndex inComponent:1];
 }
 
 - (void)initWithContent {
     [self initWithProvinceAndCity];
 }
+
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
@@ -106,10 +111,14 @@
         [pickerView reloadAllComponents];
     }
     wjProvinceModel *province = self.dataArray[self.provinceIndex];
-    NSInteger cityIndex = [pickerView selectedRowInComponent:1];
+    self.cityIndex = [pickerView selectedRowInComponent:1];
+
     NSString *provinceName = province.name;
-    NSString *cityName = province.cities[cityIndex];
+    NSString *cityName = province.cities[self.cityIndex];
     self.text = [NSString stringWithFormat:@"%@-%@", provinceName, cityName];
+    if (component == 1) {
+        [pickerView reloadAllComponents];
+    }
 }
 
 

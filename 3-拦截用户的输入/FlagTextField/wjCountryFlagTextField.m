@@ -17,6 +17,9 @@
 /** pickView*/
 @property (nonatomic, strong) UIPickerView *pickView;
 
+/* index*/
+@property (nonatomic, assign) NSInteger index;
+
 @end
 
 @implementation wjCountryFlagTextField
@@ -50,7 +53,7 @@
 }
 
 - (void)initWithText {
-    [self pickerView:self.pickView didSelectRow:0 inComponent:0];
+    [self pickerView:self.pickView didSelectRow:self.index inComponent:0];
 }
 
 - (void)initWithContent {
@@ -92,8 +95,11 @@
 // 把当前选中的展示到文本框中
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     wjCountryFlagModel *model = self.dataArray[row];
+    self.index = row;
     self.text = model.name;
 }
+
+
 
 
 @end
